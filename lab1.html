@@ -1,16 +1,56 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Lab Program 1</title>
+  <title>Calculator</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial;
+      margin-top: 50px;
+    }
+
+    input, select, button {
+      padding: 10px;
+      margin: 5px;
+      font-size: 18px;
+    }
+  </style>
 </head>
 
 <body>
 
-    <h1>Lab Program 1</h1>
+  <h2>Calculator</h2>
 
-    <p>This is my first Web Lab program.</p>
+  <input type="number" id="num1" placeholder="Enter first number">
 
-    <a href="index.html">← Back to Web Lab</a>
+  <select id="operation">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">×</option>
+    <option value="/">÷</option>
+  </select>
+
+  <input type="number" id="num2" placeholder="Enter second number">
+
+  <button onclick="calculate()">=</button>
+
+  <h2 id="result">Result: </h2>
+
+  <script>
+    function calculate() {
+      let a = Number(num1.value);
+      let b = Number(num2.value);
+      let op = operation.value;
+      let result;
+
+      if (op == "+") result = a + b;
+      if (op == "-") result = a - b;
+      if (op == "*") result = a * b;
+      if (op == "/") result = a / b;
+
+      document.getElementById("result").innerText = "Result: " + result;
+    }
+  </script>
 
 </body>
 </html>
